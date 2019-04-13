@@ -26,6 +26,7 @@ can_ok($fill, 'before');
      }
      
      $fill->debug(1); # Make sure this is set to 1 or you'll use live data
+     $fill->product_id( "BTC-USD" );
 
      ok (my $result = $fill->get, 'can get all fills');
      is (ref $result, 'ARRAY', 'get returns array');

@@ -1,4 +1,4 @@
-The module Finance::GDAX::API attempts to implement the crypto
+The module Finance::GDAX::API2 attempts to implement the crypto
 currency trading API of the GDAX exhange as published at
 
 https://docs.gdax.com/
@@ -12,11 +12,11 @@ structure in place.
 OVERVIEW
 ========
 
-The Finance::GDAX::API modules all match up to the sections in the
+The Finance::GDAX::API2 modules all match up to the sections in the
 GDAX API documentation.
 
-The only exceptions are Finance::GDAX::API (from which all the
-implementation classes inherit) and Finance::GDAX::API::UR These two
+The only exceptions are Finance::GDAX::API2 (from which all the
+implementation classes inherit) and Finance::GDAX::API2::UR These two
 modules handle the mechanics of the API requests.
 
 SECURITY
@@ -46,9 +46,9 @@ IN A NUTSHELL
 Suppose you want a list of all your GDAX account info/balances, and
 you have set your 3 environment variables to your API keys.
 
-use Finance::GDAX::API::Account;
+use Finance::GDAX::API2::Account;
 
-my $account = Finance::GDAX::API::Account->new( debug => 0 );
+my $account = Finance::GDAX::API2::Account->new( debug => 0 );
 my $list    = $account->get_all;
 
 At this point, $list will be an array that looks like:
@@ -78,7 +78,7 @@ If you do not want you API keys set in environment variables, you must
 set the attributes, which are inherited into each API module. As our
 example above:
 
-my $account = Finance::GDAX::API::Account->new( debug => 0 );
+my $account = Finance::GDAX::API2::Account->new( debug => 0 );
 $account->key($my_key);
 $account->secret($my_secret);
 $account->passphrase($my_passphrase);
@@ -90,7 +90,7 @@ MORE SECURITY
 
 There is another convenience method inherited into all API modules for
 the variously paranoid called "external_secret" which is documented in
-Finance::GDAX::API
+Finance::GDAX::API2
 
 This method will take a file name and read it in to assign the 3 API
 keys necessary for requests that was assigned to you by GDAX.

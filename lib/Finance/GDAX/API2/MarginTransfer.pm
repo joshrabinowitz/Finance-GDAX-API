@@ -1,13 +1,13 @@
-package Finance::GDAX::API::MarginTransfer;
+package Finance::GDAX::API2::MarginTransfer;
 our $VERSION = '0.01';
 use 5.20.0;
 use warnings;
 use Moose;
-use Finance::GDAX::API::TypeConstraints;
-use Finance::GDAX::API;
+use Finance::GDAX::API2::TypeConstraints;
+use Finance::GDAX::API2;
 use namespace::autoclean;
 
-extends 'Finance::GDAX::API';
+extends 'Finance::GDAX::API2';
 
 has 'margin_profile_id' => (is  => 'rw',
 			    isa => 'Str',
@@ -45,14 +45,14 @@ __PACKAGE__->meta->make_immutable;
 
 =head1 NAME
 
-Finance::GDAX::API::MarginTransfer - Transfer funds between margin and
+Finance::GDAX::API2::MarginTransfer - Transfer funds between margin and
 standard GDAX profiles
 
 =head1 SYNOPSIS
 
-  use Finance::GDAX::API::MarginTransfer;
+  use Finance::GDAX::API2::MarginTransfer;
 
-  $xfer = Finance::GDAX::API::MarginTransfer->new(
+  $xfer = Finance::GDAX::API2::MarginTransfer->new(
           type     => 'withdrawl',
           currency => 'USD',
           amount   => '250.00');

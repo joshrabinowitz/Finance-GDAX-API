@@ -6,10 +6,10 @@ use lib qw(lib t/lib);
 use GDAXTestHelper;
 
 BEGIN {
-    use_ok('Finance::GDAX::API::UserAccount');
+    use_ok('Finance::GDAX::API2::UserAccount');
 }
 
-my $account = new_ok('Finance::GDAX::API::UserAccount');
+my $account = new_ok('Finance::GDAX::API2::UserAccount');
 can_ok($account, 'trailing_volume');
     
  SKIP: {

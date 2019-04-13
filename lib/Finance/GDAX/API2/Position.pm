@@ -1,12 +1,12 @@
-package Finance::GDAX::API::Position;
+package Finance::GDAX::API2::Position;
 our $VERSION = '0.01';
 use 5.20.0;
 use warnings;
 use Moose;
-use Finance::GDAX::API;
+use Finance::GDAX::API2;
 use namespace::autoclean;
 
-extends 'Finance::GDAX::API';
+extends 'Finance::GDAX::API2';
 
 has 'repay_only' => (is  => 'rw',
 		     isa => 'Bool',
@@ -34,13 +34,13 @@ __PACKAGE__->meta->make_immutable;
 
 =head1 NAME
 
-Finance::GDAX::API::Position - Overview of profile
+Finance::GDAX::API2::Position - Overview of profile
 
 =head1 SYNOPSIS
 
-  use Finance::GDAX::API::Position;
+  use Finance::GDAX::API2::Position;
 
-  $overview = Finance::GDAX::API::Position->new;
+  $overview = Finance::GDAX::API2::Position->new;
 
   # Hash of profile positions
   $positions = $overview->get;

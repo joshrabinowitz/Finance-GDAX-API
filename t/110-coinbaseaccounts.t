@@ -5,10 +5,10 @@ use lib qw(lib t/lib);
 use GDAXTestHelper;
 
 BEGIN {
-    use_ok('Finance::GDAX::API::CoinbaseAccount');
+    use_ok('Finance::GDAX::API2::CoinbaseAccount');
 }
 
-my $coinbase_acct = new_ok('Finance::GDAX::API::CoinbaseAccount');
+my $coinbase_acct = new_ok('Finance::GDAX::API2::CoinbaseAccount');
 can_ok($coinbase_acct, 'get');
 
  SKIP: {

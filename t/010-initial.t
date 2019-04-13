@@ -6,19 +6,19 @@ use lib qw(lib t/lib);
 
 BEGIN {
     use_ok('JSON');
-    use_ok('Finance::GDAX::API::Quote');
-    use_ok('Finance::GDAX::API');
+    use_ok('Finance::GDAX::API2::Quote');
+    use_ok('Finance::GDAX::API2');
 }
 
-my $quote = Finance::GDAX::API::Quote->new(debug => 0);
-isa_ok($quote, 'Finance::GDAX::API::Quote');
+my $quote = Finance::GDAX::API2::Quote->new(debug => 0);
+isa_ok($quote, 'Finance::GDAX::API2::Quote');
 
 ok $quote->product('BTC-USD'), 'Can set quote product';
 ok my $q = $quote->get, 'quote is returned';
 is(ref($q), 'HASH', 'quote->get returns a hashref');
 ok($$q{price} > 0, 'quote->get returns a price looking like a number');
 
-my $req = Finance::GDAX::API->new(key        => 'temp',
+my $req = Finance::GDAX::API2->new(key        => 'temp',
 				  secret     => 'temp',
 				  passphrase => 'temp');
 

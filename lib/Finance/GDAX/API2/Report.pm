@@ -1,13 +1,13 @@
-package Finance::GDAX::API::Report;
+package Finance::GDAX::API2::Report;
 our $VERSION = '0.02';
 use 5.20.0;
 use warnings;
 use Moose;
-use Finance::GDAX::API::TypeConstraints;
-use Finance::GDAX::API;
+use Finance::GDAX::API2::TypeConstraints;
+use Finance::GDAX::API2;
 use namespace::autoclean;
 
-extends 'Finance::GDAX::API';
+extends 'Finance::GDAX::API2';
 
 has 'type' => (is  => 'rw',
 	       isa => 'ReportType',
@@ -77,13 +77,13 @@ __PACKAGE__->meta->make_immutable;
 
 =head1 NAME
 
-Finance::GDAX::API::Report - Generate GDAX Reports
+Finance::GDAX::API2::Report - Generate GDAX Reports
 
 =head1 SYNOPSIS
 
-  use Finance::GDAX::API::Report;
+  use Finance::GDAX::API2::Report;
 
-  $report = Finance::GDAX::API::Report->new(
+  $report = Finance::GDAX::API2::Report->new(
             start_date => '2017-06-01T00:00:00.000Z',
             end_date   => '2017-06-15T00:00:00.000Z',
             type       => 'fills');
@@ -95,7 +95,7 @@ Finance::GDAX::API::Report - Generate GDAX Reports
 
   # After you create the report, you check if it's generated yet
 
-  $report = Finance::GDAX::API::Report->new;
+  $report = Finance::GDAX::API2::Report->new;
   $result = $report->get($report_id);
   
   if ($$result{status} eq 'ready') {

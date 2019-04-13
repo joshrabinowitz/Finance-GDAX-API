@@ -6,10 +6,10 @@ use lib qw(lib t/lib);
 use GDAXTestHelper;
 
 BEGIN {
-    use_ok('Finance::GDAX::API::Position');
+    use_ok('Finance::GDAX::API2::Position');
 }
 
-my $position = new_ok('Finance::GDAX::API::Position');
+my $position = new_ok('Finance::GDAX::API2::Position');
 can_ok($position, 'repay_only');
 can_ok($position, 'get');
 can_ok($position, 'close');

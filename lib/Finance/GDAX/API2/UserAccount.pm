@@ -1,12 +1,12 @@
-package Finance::GDAX::API::UserAccount;
+package Finance::GDAX::API2::UserAccount;
 our $VERSION = '0.02';
 use 5.20.0;
 use warnings;
 use Moose;
-use Finance::GDAX::API;
+use Finance::GDAX::API2;
 use namespace::autoclean;
 
-extends 'Finance::GDAX::API';
+extends 'Finance::GDAX::API2';
 
 sub trailing_volume {
     my $self = shift;
@@ -20,13 +20,13 @@ __PACKAGE__->meta->make_immutable;
 
 =head1 NAME
 
-Finance::GDAX::API::UserAccount - Account Info
+Finance::GDAX::API2::UserAccount - Account Info
 
 =head1 SYNOPSIS
 
-  use Finance::GDAX::API::UserAccount;
+  use Finance::GDAX::API2::UserAccount;
 
-  $account = Finance::GDAX::API::UserAccount->new;
+  $account = Finance::GDAX::API2::UserAccount->new;
 
   # List of trailing volume
   $trailing = $account->trailing_volume;

@@ -1,13 +1,13 @@
-package Finance::GDAX::API::Withdrawl;
+package Finance::GDAX::API2::Withdrawl;
 our $VERSION = '0.02';
 use 5.20.0;
 use warnings;
 use Moose;
-use Finance::GDAX::API::TypeConstraints;
-use Finance::GDAX::API;
+use Finance::GDAX::API2::TypeConstraints;
+use Finance::GDAX::API2;
 use namespace::autoclean;
 
-extends 'Finance::GDAX::API';
+extends 'Finance::GDAX::API2';
 
 has 'payment_method_id' => (is  => 'rw',
 			    isa => 'Str',
@@ -78,14 +78,14 @@ __PACKAGE__->meta->make_immutable;
 
 =head1 NAME
 
-Finance::GDAX::API::Withdrawl - Withdraw funds to a Payment Method or
+Finance::GDAX::API2::Withdrawl - Withdraw funds to a Payment Method or
 Coinbase
 
 =head1 SYNOPSIS
 
-  use Finance::GDAX::API::Withdraw;
+  use Finance::GDAX::API2::Withdraw;
 
-  $withdraw = Finance::GDAX::API::Withdraw->new(
+  $withdraw = Finance::GDAX::API2::Withdraw->new(
               currency => 'USD',
               amount   => '250.00');
 

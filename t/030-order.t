@@ -6,10 +6,10 @@ use lib qw(lib t/lib);
 use GDAXTestHelper;
 
 BEGIN {
-    use_ok('Finance::GDAX::API::Order');
+    use_ok('Finance::GDAX::API2::Order');
 }
 
-my $order = new_ok('Finance::GDAX::API::Order');
+my $order = new_ok('Finance::GDAX::API2::Order');
 # Attributes
 can_ok($order, 'client_oid');
 can_ok($order, 'type');
@@ -62,7 +62,7 @@ ok $order->size(0.5), 'size set';
 
      # Order Lists
      warn "Trying API Keys again...\n";
-     my $order = Finance::GDAX::API::Order->new;
+     my $order = Finance::GDAX::API2::Order->new;
      unless ($secret eq 'RAW ENVARS') {
 	 $order->external_secret($$secret[0], $$secret[1]);
      }

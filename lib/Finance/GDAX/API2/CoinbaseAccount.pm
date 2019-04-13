@@ -1,12 +1,12 @@
-package Finance::GDAX::API::CoinbaseAccount;
+package Finance::GDAX::API2::CoinbaseAccount;
 our $VERSION = '0.01';
 use 5.20.0;
 use warnings;
 use Moose;
-use Finance::GDAX::API;
+use Finance::GDAX::API2;
 use namespace::autoclean;
 
-extends 'Finance::GDAX::API';
+extends 'Finance::GDAX::API2';
 
 sub get {
     my $self = shift;
@@ -20,13 +20,13 @@ __PACKAGE__->meta->make_immutable;
 
 =head1 NAME
 
-Finance::GDAX::API::CoinbaseAccount - List Coinbase Accounts
+Finance::GDAX::API2::CoinbaseAccount - List Coinbase Accounts
 
 =head1 SYNOPSIS
 
-  use Finance::GDAX::API::CoinbaseAccount;
+  use Finance::GDAX::API2::CoinbaseAccount;
 
-  $coinbase_accts = Finance::GDAX::API::CoinbaseAccount->new;
+  $coinbase_accts = Finance::GDAX::API2::CoinbaseAccount->new;
 
   # Array of Hashes of Coinbase accounts
   $accounts = $coinbase_accts->get;

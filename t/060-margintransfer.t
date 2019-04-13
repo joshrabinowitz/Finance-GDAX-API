@@ -6,10 +6,10 @@ use lib qw(lib t/lib);
 use GDAXTestHelper;
 
 BEGIN {
-    use_ok('Finance::GDAX::API::MarginTransfer');
+    use_ok('Finance::GDAX::API2::MarginTransfer');
 }
 
-my $xfer = new_ok('Finance::GDAX::API::MarginTransfer');
+my $xfer = new_ok('Finance::GDAX::API2::MarginTransfer');
 can_ok($xfer, 'initiate');
 can_ok($xfer, 'margin_profile_id');
 can_ok($xfer, 'type');

@@ -1,13 +1,13 @@
-package Finance::GDAX::API::Funding;
+package Finance::GDAX::API2::Funding;
 our $VERSION = '0.01';
 use 5.20.0;
 use warnings;
 use Moose;
-use Finance::GDAX::API::TypeConstraints;
-use Finance::GDAX::API;
+use Finance::GDAX::API2::TypeConstraints;
+use Finance::GDAX::API2;
 use namespace::autoclean;
 
-extends 'Finance::GDAX::API';
+extends 'Finance::GDAX::API2';
 
 # List funding
 has 'status' => (is  => 'rw',
@@ -50,13 +50,13 @@ __PACKAGE__->meta->make_immutable;
 
 =head1 NAME
 
-Finance::GDAX::API::Funding - List GDAX margin funding records
+Finance::GDAX::API2::Funding - List GDAX margin funding records
 
 =head1 SYNOPSIS
 
-  use Finance::GDAX::API::Funding;
+  use Finance::GDAX::API2::Funding;
 
-  $funding = Finance::GDAX::API::Funding->new;
+  $funding = Finance::GDAX::API2::Funding->new;
   $records = $funding->get;
 
   # To limit records based on current status

@@ -1,13 +1,13 @@
-package Finance::GDAX::API::Product;
+package Finance::GDAX::API2::Product;
 our $VERSION = '0.01';
 use 5.20.0;
 use warnings;
 use Moose;
-use Finance::GDAX::API;
-use Finance::GDAX::API::TypeConstraints;
+use Finance::GDAX::API2;
+use Finance::GDAX::API2::TypeConstraints;
 use namespace::autoclean;
 
-extends 'Finance::GDAX::API';
+extends 'Finance::GDAX::API2';
 
 has 'id' => (is  => 'rw',
 	     isa => 'Str',
@@ -104,13 +104,13 @@ __PACKAGE__->meta->make_immutable;
 
 =head1 NAME
 
-Finance::GDAX::API::UserAccount - Product Information
+Finance::GDAX::API2::UserAccount - Product Information
 
 =head1 SYNOPSIS
 
-  use Finance::GDAX::API::Product;
+  use Finance::GDAX::API2::Product;
 
-  $product = Finance::GDAX::API::Product->new;
+  $product = Finance::GDAX::API2::Product->new;
 
   # List of all products
   $products = $product->list;

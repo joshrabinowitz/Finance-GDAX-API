@@ -1,12 +1,12 @@
-package Finance::GDAX::API::Fill;
+package Finance::GDAX::API2::Fill;
 our $VERSION = '0.01';
 use 5.20.0;
 use warnings;
 use Moose;
-use Finance::GDAX::API;
+use Finance::GDAX::API2;
 use namespace::autoclean;
 
-extends 'Finance::GDAX::API';
+extends 'Finance::GDAX::API2';
 
 has 'order_id' => (is  => 'rw',
 		   isa => 'Maybe[Str]',
@@ -35,22 +35,22 @@ __PACKAGE__->meta->make_immutable;
 
 =head1 NAME
 
-Finance::GDAX::API::Fill - Retrieve GDAX fill orders
+Finance::GDAX::API2::Fill - Retrieve GDAX fill orders
 
 =head1 SYNOPSIS
 
-  use Finance::GDAX::API::Fill;
+  use Finance::GDAX::API2::Fill;
 
   # Get all fills for a given $orderid
-  $fills = Finance::GDAX::API::Fill->new(order_id => $orderid)->get;
+  $fills = Finance::GDAX::API2::Fill->new(order_id => $orderid)->get;
   
   # Get all fills for a given $productid
-  $gdax_fills = Finance::GDAX::API::Fill->new;
+  $gdax_fills = Finance::GDAX::API2::Fill->new;
   $gdax_fills->product_id($productid);
   $fills = $gdax_fills->get;
 
   # Or get all of them
-  $gdax_fills = Finance::GDAX::API::Fill->new;
+  $gdax_fills = Finance::GDAX::API2::Fill->new;
   $fills = $gdax_fills->get;
 
 =head2 DESCRIPTION

@@ -5,10 +5,10 @@ use lib qw(lib t/lib);
 use GDAXTestHelper;
 
 BEGIN {
-    use_ok('Finance::GDAX::API::Time');
+    use_ok('Finance::GDAX::API2::Time');
 }
 
-my $time = new_ok('Finance::GDAX::API::Time');
+my $time = new_ok('Finance::GDAX::API2::Time');
 can_ok($time, 'get');
     
 $time->debug(0); # We're using production system for this since no signing is required.

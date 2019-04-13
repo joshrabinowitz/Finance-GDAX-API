@@ -1,12 +1,12 @@
-package Finance::GDAX::API::Time;
+package Finance::GDAX::API2::Time;
 our $VERSION = '0.01';
 use 5.20.0;
 use warnings;
 use Moose;
-use Finance::GDAX::API;
+use Finance::GDAX::API2;
 use namespace::autoclean;
 
-extends 'Finance::GDAX::API';
+extends 'Finance::GDAX::API2';
 
 sub get {
     my $self = shift;
@@ -20,13 +20,13 @@ __PACKAGE__->meta->make_immutable;
 
 =head1 NAME
 
-Finance::GDAX::API::Time - Time
+Finance::GDAX::API2::Time - Time
 
 =head1 SYNOPSIS
 
-  use Finance::GDAX::API::Time;
+  use Finance::GDAX::API2::Time;
 
-  $time = Finance::GDAX::API::Time->new;
+  $time = Finance::GDAX::API2::Time->new;
 
   # Get current time
   $time_hash = $time->get;

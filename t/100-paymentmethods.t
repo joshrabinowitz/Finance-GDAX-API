@@ -5,10 +5,10 @@ use lib qw(lib t/lib);
 use GDAXTestHelper;
 
 BEGIN {
-    use_ok('Finance::GDAX::API::PaymentMethod');
+    use_ok('Finance::GDAX::API2::PaymentMethod');
 }
 
-my $pay_method = new_ok('Finance::GDAX::API::PaymentMethod');
+my $pay_method = new_ok('Finance::GDAX::API2::PaymentMethod');
 can_ok($pay_method, 'get');
     
  SKIP: {

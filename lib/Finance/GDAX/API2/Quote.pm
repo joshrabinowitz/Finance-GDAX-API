@@ -1,22 +1,22 @@
-package Finance::GDAX::API::Quote;
+package Finance::GDAX::API2::Quote;
 our $VERSION = '0.01';
 use 5.20.0;
 use warnings;
 use Moose;
 use JSON;
 use REST::Client;
-use Finance::GDAX::API::URL;
+use Finance::GDAX::API2::URL;
 use namespace::autoclean;
 
 
 =head1 NAME
 
-Finance::GDAX::API::Quote - Get a quote from the GDAX
+Finance::GDAX::API2::Quote - Get a quote from the GDAX
 
 =head1 SYNOPSIS
 
   use Finanace::GDAX::API::Quote;
-  my $quote = Finance::GDAX::API::Quote->new(product => 'BTC-USD')->get;
+  my $quote = Finance::GDAX::API2::Quote->new(product => 'BTC-USD')->get;
   say $$quote{price};
   say $$quote{bid};
   say $$quote{ask};
@@ -27,7 +27,7 @@ Gets a quote from the GDAX for the specified "product". These quotes
 do not require GDAX API keys, but they suggesting keeping traffic low.
 
 More detailed information can be retrieve about products and history
-using API keys with other classes like Finance::GDAX::API::Product
+using API keys with other classes like Finance::GDAX::API2::Product
 
 Currently, the supported products are:
 
@@ -86,7 +86,7 @@ Returns a quote for the desired product.
 
 sub get {
     my $self = shift;
-    my $url  = Finance::GDAX::API::URL->new;
+    my $url  = Finance::GDAX::API2::URL->new;
     $url->debug($self->debug);
     $url->add('products');
     $url->add($self->product);

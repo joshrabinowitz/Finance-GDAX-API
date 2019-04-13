@@ -1,4 +1,4 @@
-package Finance::GDAX::API::URL;
+package Finance::GDAX::API2::URL;
 our $VERSION = '0.02';
 use 5.20.0;
 use warnings;
@@ -6,17 +6,17 @@ use Moose;
 
 =head1 NAME
 
-Finance::GDAX::API::URL - URL assembly for GDAX REST API
+Finance::GDAX::API2::URL - URL assembly for GDAX REST API
 
 =head1 SYNOPSIS
 
   use Finanace::GDAX::API::URL;
-  my $url = Finance::GDAX::API::URL->new->testing;
+  my $url = Finance::GDAX::API2::URL->new->testing;
   `wget $url/test_thing`;
 
 =head1 DESCRIPTION
 
-This class builds URLs for Finance::GDAX::API classes
+This class builds URLs for Finance::GDAX::API2 classes
 
 =head1 ATTRIBUTES
 

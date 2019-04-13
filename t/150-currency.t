@@ -5,10 +5,10 @@ use lib qw(lib t/lib);
 use GDAXTestHelper;
 
 BEGIN {
-    use_ok('Finance::GDAX::API::Currency');
+    use_ok('Finance::GDAX::API2::Currency');
 }
 
-my $currency = new_ok('Finance::GDAX::API::Currency');
+my $currency = new_ok('Finance::GDAX::API2::Currency');
 can_ok($currency, 'list');
     
  SKIP: {

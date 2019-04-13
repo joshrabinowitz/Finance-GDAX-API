@@ -5,10 +5,10 @@ use lib qw(lib t/lib);
 use GDAXTestHelper;
 
 BEGIN {
-    use_ok('Finance::GDAX::API::Account');
+    use_ok('Finance::GDAX::API2::Account');
 }
 
-my $account = new_ok('Finance::GDAX::API::Account');
+my $account = new_ok('Finance::GDAX::API2::Account');
 can_ok($account, 'get_all');
 can_ok($account, 'get');
 can_ok($account, 'history');

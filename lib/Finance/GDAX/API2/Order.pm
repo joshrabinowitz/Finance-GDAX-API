@@ -1,13 +1,13 @@
-package Finance::GDAX::API::Order;
+package Finance::GDAX::API2::Order;
 our $VERSION = '0.03';
 use 5.20.0;
 use warnings;
 use Moose;
-use Finance::GDAX::API::TypeConstraints;;
-use Finance::GDAX::API;
+use Finance::GDAX::API2::TypeConstraints;;
+use Finance::GDAX::API2;
 use namespace::autoclean;
 
-extends 'Finance::GDAX::API';
+extends 'Finance::GDAX::API2';
 
 our @body_attributes = ('client_oid',
 			'type',
@@ -155,13 +155,13 @@ __PACKAGE__->meta->make_immutable;
 
 =head1 NAME
 
-Finance::GDAX::API::Order - Perl interface to the GDAX Order API
+Finance::GDAX::API2::Order - Perl interface to the GDAX Order API
 
 =head1 SYNOPSIS
 
-  use Finance::GDAX::API::Order;
+  use Finance::GDAX::API2::Order;
 
-  $order = Finance::GDAX::API::Order->new;
+  $order = Finance::GDAX::API2::Order->new;
   $order->side('buy');
   $order->type('market');
   $order->product_id('BTC-USD');

@@ -1,4 +1,4 @@
-package Finance::GDAX::API;
+package Finance::GDAX::API2;
 our $VERSION = '0.09';
 use 5.20.0;
 use warnings;
@@ -7,7 +7,7 @@ use Moose;
 use REST::Client;
 use MIME::Base64;
 use Digest::SHA qw(hmac_sha256_base64);
-use Finance::GDAX::API::URL;
+use Finance::GDAX::API2::URL;
 use namespace::autoclean;
 
 has 'debug' => (is  => 'rw',
@@ -63,7 +63,7 @@ has '_body_json' => (is  => 'ro',
 sub send {
     my $self = shift;
     my $client = REST::Client->new;
-    my $url    = Finance::GDAX::API::URL->new(debug => $self->debug);
+    my $url    = Finance::GDAX::API2::URL->new(debug => $self->debug);
     
     $url->add($self->path);
     
@@ -149,11 +149,11 @@ __PACKAGE__->meta->make_immutable;
 
 =head1 NAME
 
-Finance::GDAX::API - Build and sign GDAX REST request
+Finance::GDAX::API2 - Build and sign GDAX REST request
 
 =head1 SYNOPSIS
 
-  $req = Finance::GDAX::API->new(
+  $req = Finance::GDAX::API2->new(
                         key        => 'My API Key',
                         secret     => 'My API Secret Key',
                         passphrase => 'My API Passphrase');
@@ -163,7 +163,7 @@ Finance::GDAX::API - Build and sign GDAX REST request
 
   # Use the more specific classes, for example Account:
 
-  $account = Finance::GDAX::API::Account->new(
+  $account = Finance::GDAX::API2::Account->new(
                         key        => 'My API Key',
                         secret     => 'My API Secret Key',
                         passphrase => 'My API Passphrase');
@@ -173,7 +173,7 @@ Finance::GDAX::API - Build and sign GDAX REST request
   # If you use Environment variables to store your secrects, you can
   # omit them in the constructors (see the Attributes below)
 
-  $order = Finance::GDAX::API::Order->new;
+  $order = Finance::GDAX::API2::Order->new;
   $orders = $order->list(['open','settled'], 'BTC-USD');
 
 =head1 DESCRIPTION
@@ -182,7 +182,7 @@ Creates a signed GDAX REST request - you need to provide the key,
 secret and passphrase attributes, or specify that they be provided by
 the external_secret method.
 
-All Finance::GDAX::API::* modules extend this class to implement their
+All Finance::GDAX::API2::* modules extend this class to implement their
 particular portion of the GDAX API.
 
 This is a low-level implementation of the GDAX API and complete,
@@ -254,7 +254,7 @@ Integer time in seconds to wait for response to request.
 =head2 C<send>
 
 Sends the GDAX API request, returning the JSON response content as a
-perl data structure. Each Finance::GDAX::API::* class documents this
+perl data structure. Each Finance::GDAX::API2::* class documents this
 structure (what to expect), as does the GDAX API (which will always be
 authoritative).
 
@@ -280,7 +280,7 @@ credentials, you can create a small callable program that will decrypt
 them and provide them, so that they never live on disk unencrypted,
 and never show up in process listings:
 
-  my $request = Finance::GDAX::API->new;
+  my $request = Finance::GDAX::API2->new;
   $request->external_secret('/path/to/my_decryptor', 1);
 
 This would assign the key, secret and passphrase attributes for you by

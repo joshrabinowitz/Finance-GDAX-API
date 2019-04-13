@@ -1,4 +1,4 @@
-package Finance::GDAX::API::TypeConstraints;
+package Finance::GDAX::API2::TypeConstraints;
 our $VERSION = '0.01';
 use 5.20.0;
 use warnings;

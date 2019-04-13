@@ -6,10 +6,10 @@ use lib qw(lib t/lib);
 use GDAXTestHelper;
 
 BEGIN {
-    use_ok('Finance::GDAX::API::Withdrawl');
+    use_ok('Finance::GDAX::API2::Withdrawl');
 }
 
-my $withdrawl = new_ok('Finance::GDAX::API::Withdrawl');
+my $withdrawl = new_ok('Finance::GDAX::API2::Withdrawl');
 can_ok($withdrawl, 'payment_method_id');
 can_ok($withdrawl, 'coinbase_account_id');
 can_ok($withdrawl, 'crypto_address');

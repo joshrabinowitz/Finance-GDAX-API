@@ -6,10 +6,10 @@ use lib qw(lib t/lib);
 use GDAXTestHelper;
 
 BEGIN {
-    use_ok('Finance::GDAX::API::Fill');
+    use_ok('Finance::GDAX::API2::Fill');
 }
 
-my $fill = new_ok('Finance::GDAX::API::Fill');
+my $fill = new_ok('Finance::GDAX::API2::Fill');
 can_ok($fill, 'get');
 can_ok($fill, 'order_id');
 can_ok($fill, 'product_id');

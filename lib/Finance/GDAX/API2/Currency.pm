@@ -1,12 +1,12 @@
-package Finance::GDAX::API::Currency;
+package Finance::GDAX::API2::Currency;
 our $VERSION = '0.01';
 use 5.20.0;
 use warnings;
 use Moose;
-use Finance::GDAX::API;
+use Finance::GDAX::API2;
 use namespace::autoclean;
 
-extends 'Finance::GDAX::API';
+extends 'Finance::GDAX::API2';
 
 sub list {
     my $self = shift;
@@ -20,13 +20,13 @@ __PACKAGE__->meta->make_immutable;
 
 =head1 NAME
 
-Finance::GDAX::API::Currency - Currencies
+Finance::GDAX::API2::Currency - Currencies
 
 =head1 SYNOPSIS
 
-  use Finance::GDAX::API::Currency;
+  use Finance::GDAX::API2::Currency;
 
-  $currency = Finance::GDAX::API::Currency->new;
+  $currency = Finance::GDAX::API2::Currency->new;
 
   # List all currencies
   $currencies = $currency->list;

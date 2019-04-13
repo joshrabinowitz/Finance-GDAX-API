@@ -1,12 +1,12 @@
-package Finance::GDAX::API::PaymentMethod;
+package Finance::GDAX::API2::PaymentMethod;
 our $VERSION = '0.01';
 use 5.20.0;
 use warnings;
 use Moose;
-use Finance::GDAX::API;
+use Finance::GDAX::API2;
 use namespace::autoclean;
 
-extends 'Finance::GDAX::API';
+extends 'Finance::GDAX::API2';
 
 sub get {
     my $self = shift;
@@ -20,13 +20,13 @@ __PACKAGE__->meta->make_immutable;
 
 =head1 NAME
 
-Finance::GDAX::API::PaymentMethod - List Payment Methods
+Finance::GDAX::API2::PaymentMethod - List Payment Methods
 
 =head1 SYNOPSIS
 
-  use Finance::GDAX::API::PaymentMethod;
+  use Finance::GDAX::API2::PaymentMethod;
 
-  $pay_methods = Finance::GDAX::API::PaymentMethod->new;
+  $pay_methods = Finance::GDAX::API2::PaymentMethod->new;
 
   # Array of Hashes of payment methods available
   $methods = $pay_methods->get;

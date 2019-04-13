@@ -6,10 +6,10 @@ use lib qw(lib t/lib);
 use GDAXTestHelper;
 
 BEGIN {
-    use_ok('Finance::GDAX::API::Report');
+    use_ok('Finance::GDAX::API2::Report');
 }
 
-my $report = new_ok('Finance::GDAX::API::Report');
+my $report = new_ok('Finance::GDAX::API2::Report');
 can_ok($report, 'type');
 can_ok($report, 'start_date');
 can_ok($report, 'end_date');
@@ -53,7 +53,7 @@ ok($report->product_id('BTC-USD'), 'product ID can be set');
      is (ref $result, 'HASH', 'create returns hash');
      ok (defined $$result{id}, 'got a report id back');
 
-     $report = Finance::GDAX::API::Report->new;
+     $report = Finance::GDAX::API2::Report->new;
      unless ($secret eq 'RAW ENVARS') {
 	 warn "Need access to secrets again for new request\n";
 	 $report->external_secret($$secret[0], $$secret[1]);

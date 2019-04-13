@@ -1,12 +1,12 @@
-package Finance::GDAX::API::Account;
+package Finance::GDAX::API2::Account;
 our $VERSION = '0.02';
 use 5.20.0;
 use warnings;
 use Moose;
-use Finance::GDAX::API;
+use Finance::GDAX::API2;
 use namespace::autoclean;
 
-extends 'Finance::GDAX::API';
+extends 'Finance::GDAX::API2';
 
 sub get_all {
     my $self = shift;
@@ -44,13 +44,13 @@ __PACKAGE__->meta->make_immutable;
 
 =head1 NAME
 
-Finance::GDAX::API::Account - Work with GDAX Accounts
+Finance::GDAX::API2::Account - Work with GDAX Accounts
 
 =head1 SYNOPSIS
 
-  use Finance::GDAX::API::Account;
+  use Finance::GDAX::API2::Account;
 
-  $account = Finance::GDAX::API::Account->new(
+  $account = Finance::GDAX::API2::Account->new(
                             key        => 'wowihefoiwhoihw',
                             secret     => 'woihoip2hf23908hf32hf2h',
                             passphrase => 'woiefhvbno3iurbnv9p4h49h');
@@ -72,7 +72,7 @@ Finance::GDAX::API::Account - Work with GDAX Accounts
 
 Creates a GDAX account object to examine accounts.
 
-See Finance::GDAX::API for details on API key requirements that
+See Finance::GDAX::API2 for details on API key requirements that
 need to be passed in.
 
 The HTTP response code can be accessed via the "response_code"

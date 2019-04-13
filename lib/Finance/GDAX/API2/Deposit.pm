@@ -1,13 +1,13 @@
-package Finance::GDAX::API::Deposit;
+package Finance::GDAX::API2::Deposit;
 our $VERSION = '0.01';
 use 5.20.0;
 use warnings;
 use Moose;
-use Finance::GDAX::API::TypeConstraints;
-use Finance::GDAX::API;
+use Finance::GDAX::API2::TypeConstraints;
+use Finance::GDAX::API2;
 use namespace::autoclean;
 
-extends 'Finance::GDAX::API';
+extends 'Finance::GDAX::API2';
 
 has 'payment_method_id' => (is  => 'rw',
 			    isa => 'Str',
@@ -59,14 +59,14 @@ __PACKAGE__->meta->make_immutable;
 
 =head1 NAME
 
-Finance::GDAX::API::Deposit - Deposit funds via Payment Method or
+Finance::GDAX::API2::Deposit - Deposit funds via Payment Method or
 Coinbase
 
 =head1 SYNOPSIS
 
-  use Finance::GDAX::API::Deposit;
+  use Finance::GDAX::API2::Deposit;
 
-  $deposit = Finance::GDAX::API::Deposit->new(
+  $deposit = Finance::GDAX::API2::Deposit->new(
           currency => 'USD',
           amount   => '250.00');
   $deposit->payment_method_id('kwji-wefwe-ewrgeurg-wef');

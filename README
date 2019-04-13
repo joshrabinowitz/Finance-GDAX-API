@@ -3,6 +3,9 @@ currency trading API of the GDAX exhange as published at
 
 https://docs.gdax.com/
 
+This module is based on Finance::GDAX::API and adds pagination.
+Merging these changes back into Finance::GDAX::API is welcome.
+
 At the time of writing on 24-Jun-2017 all documented REST points have
 been implemented.
 

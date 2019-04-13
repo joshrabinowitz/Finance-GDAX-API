@@ -14,6 +14,9 @@ has 'order_id' => (is  => 'rw',
 has 'product_id' => (is  => 'rw',
 		     isa => 'Maybe[Str]',
     );
+has 'before' => (is  => 'rw',
+		     isa => 'Maybe[Str]',
+    );
 
 sub get {
     my $self = shift;
@@ -21,6 +24,7 @@ sub get {
     my $path = '/fills';
     push @qparams, 'order_id='   . $self->order_id   if $self->order_id;
     push @qparams, 'product_id=' . $self->product_id if $self->product_id;
+    push @qparams, 'before=' . $self->before if $self->before;
     if (scalar @qparams) {
 	$path .= '?' . join('&', @qparams);
     }

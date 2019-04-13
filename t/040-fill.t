@@ -13,6 +13,7 @@ my $fill = new_ok('Finance::GDAX::API2::Fill');
 can_ok($fill, 'get');
 can_ok($fill, 'order_id');
 can_ok($fill, 'product_id');
+can_ok($fill, 'before');
 
  SKIP: {
      my $secret = GDAX_environment_vars();

@@ -51,6 +51,12 @@ has '_sections' => (is  => 'rw',
 		    isa => 'ArrayRef',
 		    default => sub {[]},
     );
+
+# you cannot name this 'after'
+has '_paginate_after' => ( is => 'rw', 
+            isa => 'Str',
+            default => '',
+ );
 		    
 
 =head1 METHODS
@@ -65,6 +71,9 @@ sub get {
     my $self = shift;
     my $url = join '/', @{$self->_sections};
     $url = '/'.$url;
+    if ($self->_paginate_after) {
+    $url .= "?after=" . $self->_paginate_after;
+    }
     if ($self->debug) {
 	return $self->testing.$url;
     } else {

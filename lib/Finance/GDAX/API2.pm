@@ -83,6 +83,7 @@ sub send {
 	$client->$method($url->get, $self->body_json);
     }
 
+    my $responseHeaders = $client->responseHeaders;
     my $content = JSON->new->decode($client->responseContent);
     $self->_set_response_code($client->responseCode);
     if ($self->response_code >= 400) {
